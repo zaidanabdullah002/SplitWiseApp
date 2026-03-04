@@ -1,4 +1,3 @@
 package org.example.app
 
-class Expense {
-}
+data class Expense(val expenseId:Int,val membersList : List<User>,val amountList : List<Double>)
