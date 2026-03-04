@@ -1,23 +1,76 @@
-# split-wise-app
+SplitWiseApp 💸
+A robust expense-sharing engine built with Kotlin and Gradle. This application manages complex debt relationships, allowing users to track who paid for what and how much each person owes within a group.
 
-This project uses [Gradle](https://gradle.org/).
-To build and run the application, use the *Gradle* tool window by clicking the Gradle icon in the right-hand toolbar,
-or run it directly from the terminal:
+🏗 Project Structure
+The project follows a standard Gradle multi-module structure:
 
-* Run `./gradlew run` to build and run the application.
-* Run `./gradlew build` to only build the application.
-* Run `./gradlew check` to run all checks, including tests.
-* Run `./gradlew clean` to clean all build outputs.
+app/src/main/kotlin: Contains the core business logic.
 
-Note the usage of the Gradle Wrapper (`./gradlew`).
-This is the suggested way to use Gradle in production projects.
+UserService.kt: Manages user profiles and registration.
 
-[Learn more about the Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+ExpenseService.kt: Handles the creation and categorization of expenses.
 
-[Learn more about Gradle tasks](https://docs.gradle.org/current/userguide/command_line_interface.html#common_tasks).
+SplitService.kt: The logic engine for dividing costs.
 
-This project follows the suggested multi-module setup and consists of the `app` and `utils` subprojects.
-The shared build logic was extracted to a convention plugin located in `buildSrc`.
+BalanceService.kt: Calculates the net "owe/owed" state between users.
 
-This project uses a version catalog (see `gradle/libs.versions.toml`) to declare and version dependencies
-and both a build cache and a configuration cache (see `gradle.properties`).
+App.kt: The main entry point of the application.
+
+utils/: Helper functions and common utilities.
+
+buildSrc/: Custom Gradle build logic and dependency management.
+
+🛠 Tech Stack
+Language: Kotlin
+
+Build System: Gradle (Kotlin DSL)
+
+Architecture: Service-Repository Pattern
+
+🚀 Getting Started
+Prerequisites
+JDK 17 or higher
+
+Gradle (or use the included ./gradlew wrapper)
+
+Installation & Setup
+Clone the repository:
+
+Bash
+git clone git@github.com:zaidanabdullah002/SplitWiseApp.git
+cd SplitWiseApp
+Build the project:
+
+Bash
+./gradlew build
+Run the Application:
+
+Bash
+./gradlew run
+🧪 Running Tests
+The project includes a test suite located in app/src/test. To run them:
+
+Bash
+./gradlew test
+📝 Planned Features
+[ ] Persistence layer (SQL/NoSQL database integration)
+
+[ ] REST API layer using Ktor or Spring Boot
+
+[ ] Support for unequal splits (percentages/shares)
+
+[ ] Settlement algorithm optimization (Simplify Debts)
+
+How to update this on GitHub:
+Since you've already successfully pushed to the master branch, follow these steps to add this README:
+
+Open the file: nano README.md (or open it in VS Code/IntelliJ).
+
+Paste the content above and save it.
+
+Push the update:
+
+Bash
+git add README.md
+git commit -m "docs: customize readme for kotlin/gradle structure"
+git push origin master
